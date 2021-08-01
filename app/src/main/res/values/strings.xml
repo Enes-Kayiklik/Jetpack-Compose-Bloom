@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Bloom</string>
+    <string name="welcome_back_description">welcome screen background image</string>
+    <string name="welcome_fore_description">welcome screen foreground image</string>
+    <string name="welcome_title">Beautiful home garden solutions</string>
+    <string name="create_account">Create Account</string>
+    <string name="log_in">Log in</string>
 </resources>
