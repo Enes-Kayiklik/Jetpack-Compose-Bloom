@@ -2,27 +2,50 @@ package com.eneskayiklik.bloom.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.eneskayiklik.bloom.R
+
+private val NunitoSansBold = FontFamily(Font(R.font.nunito_sans_bold))
+private val NunitoSansLight = FontFamily(Font(R.font.nunito_sans_light))
+private val NunitoSansSemiBold = FontFamily(Font(R.font.nunito_sans_semi_bold))
 
 // Set of Material typography styles to start with
 val Typography = Typography(
-    body1 = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
+    h1 = TextStyle(
+        fontFamily = NunitoSansBold,
+        letterSpacing = 0.sp,
+        fontSize = 18.sp
+    ),
+    h2 = TextStyle(
+        fontFamily = NunitoSansBold,
+        letterSpacing = 0.15.sp,
+        fontSize = 14.sp
+    ),
+    subtitle1 = TextStyle(
+        fontFamily = NunitoSansLight,
+        letterSpacing = 0.sp,
         fontSize = 16.sp
-    )
-    /* Other default text styles to override
+    ),
+    body1 = TextStyle(
+        fontFamily = NunitoSansLight,
+        letterSpacing = 0.sp,
+        fontSize = 14.sp
+    ),
+    body2 = TextStyle(
+        fontFamily = NunitoSansLight,
+        letterSpacing = 0.sp,
+        fontSize = 12.sp
+    ),
     button = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.W500,
+        fontFamily = NunitoSansSemiBold,
+        letterSpacing = 0.sp,
         fontSize = 14.sp
     ),
     caption = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.Normal,
+        fontFamily = NunitoSansSemiBold,
+        letterSpacing = 0.sp,
         fontSize = 12.sp
     )
-    */
 )
