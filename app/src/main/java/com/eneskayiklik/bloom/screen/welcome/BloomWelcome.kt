@@ -55,7 +55,10 @@ private fun WelcomeForeground(isLight: Boolean) {
             color = MaterialTheme.colors.onSurface
         )
         Spacer(modifier = Modifier.height(40.dp))
-        BloomButton(text = stringResource(id = R.string.create_account))
+        BloomButton(
+            text = stringResource(id = R.string.create_account),
+            modifier = Modifier.padding(start = 16.dp, end = 16.dp)
+        )
         Spacer(modifier = Modifier.height(8.dp))
         BloomTextButton(
             text = stringResource(id = R.string.log_in)

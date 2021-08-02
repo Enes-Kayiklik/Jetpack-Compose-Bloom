@@ -13,14 +13,14 @@ import com.eneskayiklik.bloom.ui.theme.Shapes
 @Composable
 fun BloomButton(
     text: String,
+    modifier: Modifier = Modifier,
     backgroundColor: Color = MaterialTheme.colors.secondary
 ) {
     Button(
         onClick = { /*TODO*/ },
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
-            .height(48.dp)
-            .padding(start = 16.dp, end = 16.dp),
+            .height(48.dp),
         shape = Shapes.medium,
         colors = ButtonDefaults.buttonColors(backgroundColor = backgroundColor),
     ) {
