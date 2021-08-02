@@ -24,7 +24,7 @@ fun WelcomeScreen() {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colors.background),
+            .background(MaterialTheme.colors.primary),
     ) {
         val isLight = MaterialTheme.colors.isLight
         WelcomeBackground(isLight)
