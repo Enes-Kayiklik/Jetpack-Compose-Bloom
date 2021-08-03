@@ -21,8 +21,8 @@ import com.eneskayiklik.bloom.ui.theme.BloomTheme
 fun BrowseCard(item: Bloom) {
     Card(
         modifier = Modifier.size(136.dp),
-        backgroundColor = MaterialTheme.colors.surface,
-        shape = MaterialTheme.shapes.small
+        shape = MaterialTheme.shapes.small,
+        elevation = 1.dp
     ) {
         Column(modifier = Modifier.fillMaxSize()) {
             Image(
@@ -37,7 +37,7 @@ fun BrowseCard(item: Bloom) {
             Text(
                 text = item.title,
                 modifier = Modifier
-                    .padding(start = 16.dp)
+                    .padding(start = 16.dp, top = 8.dp)
                     .wrapContentSize(align = CenterStart),
                 color = MaterialTheme.colors.onBackground,
                 style = MaterialTheme.typography.h2

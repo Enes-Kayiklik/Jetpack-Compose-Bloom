@@ -2,14 +2,10 @@ package com.eneskayiklik.bloom.screen.home
 
 import android.content.res.Configuration
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Checkbox
-import androidx.compose.material.Divider
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -49,13 +45,13 @@ fun HomeGardenCard(item: Bloom) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(1.dp)
-                    .align(Alignment.BottomCenter)
-                    .background(MaterialTheme.colors.onBackground),
+                    .align(Alignment.BottomCenter),
             )
             Checkbox(
                 checked = isSelected,
                 onCheckedChange = { isSelected = isSelected.not() },
-                modifier = Modifier.align(Alignment.CenterEnd)
+                modifier = Modifier.align(Alignment.CenterEnd),
+                colors = CheckboxDefaults.colors(checkmarkColor = MaterialTheme.colors.primary)
             )
             Text(
                 text = item.title,
