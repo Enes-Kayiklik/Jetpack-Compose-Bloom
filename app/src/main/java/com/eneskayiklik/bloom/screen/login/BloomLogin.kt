@@ -33,7 +33,10 @@ fun LoginScreen() {
             Spacer(modifier = Modifier.height(16.dp))
             BloomTextField(label = "Email address")
             Spacer(modifier = Modifier.height(8.dp))
-            BloomTextField(label = "Password (8+ characters)", PasswordVisualTransformation())
+            BloomTextField(
+                label = "Password (8+ characters)",
+                visualTransformation = PasswordVisualTransformation()
+            )
             Spacer(modifier = Modifier.height(16.dp))
             TermsText()
             Spacer(modifier = Modifier.height(16.dp))

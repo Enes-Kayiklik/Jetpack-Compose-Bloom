@@ -12,14 +12,18 @@ import androidx.compose.ui.text.input.VisualTransformation
 @Composable
 fun BloomTextField(
     label: String,
+    modifier: Modifier = Modifier,
+    leadingIcon: @Composable (() -> Unit)? = null,
     visualTransformation: VisualTransformation = VisualTransformation.None
 ) {
     var text by remember { mutableStateOf("") }
 
     OutlinedTextField(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth(),
+
         value = text,
+        leadingIcon = leadingIcon,
         colors = TextFieldDefaults.outlinedTextFieldColors(
             textColor = MaterialTheme.colors.onSurface,
             focusedBorderColor = MaterialTheme.colors.onSurface
