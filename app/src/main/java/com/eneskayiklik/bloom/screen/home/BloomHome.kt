@@ -29,7 +29,8 @@ import com.eneskayiklik.bloom.ui.theme.BloomTheme
 fun HomeScreen() {
     Scaffold(
         modifier = Modifier
-            .fillMaxSize(), backgroundColor = MaterialTheme.colors.background
+            .fillMaxSize(), backgroundColor = MaterialTheme.colors.background,
+        bottomBar = { BloomBottomBar() }
     ) {
         LazyColumn {
             // search box
