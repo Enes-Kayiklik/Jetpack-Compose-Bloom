@@ -14,13 +14,17 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.eneskayiklik.bloom.R
 import com.eneskayiklik.bloom.component.BloomButton
 import com.eneskayiklik.bloom.component.BloomTextButton
 import com.eneskayiklik.bloom.ui.theme.BloomTheme
 
 @Composable
-fun WelcomeScreen() {
+fun WelcomeScreen(
+    navController: NavController
+) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -28,12 +32,14 @@ fun WelcomeScreen() {
     ) {
         val isLight = MaterialTheme.colors.isLight
         WelcomeBackground(isLight)
-        WelcomeForeground(isLight)
+        WelcomeForeground(isLight) {
+            navController.navigate("login")
+        }
     }
 }
 
 @Composable
-private fun WelcomeForeground(isLight: Boolean) {
+private fun WelcomeForeground(isLight: Boolean, onClick: () -> Unit = { }) {
     Column(
         modifier = Modifier.padding(top = 72.dp)
     ) {
@@ -61,7 +67,8 @@ private fun WelcomeForeground(isLight: Boolean) {
         )
         Spacer(modifier = Modifier.height(8.dp))
         BloomTextButton(
-            text = stringResource(id = R.string.log_in)
+            text = stringResource(id = R.string.log_in),
+            onClick = onClick
         )
     }
 }
@@ -106,6 +113,6 @@ private fun WelcomeBackground(isLight: Boolean) {
 @Composable
 fun WelcomePreview() {
     BloomTheme {
-        WelcomeScreen()
+        WelcomeScreen(rememberNavController())
     }
 }

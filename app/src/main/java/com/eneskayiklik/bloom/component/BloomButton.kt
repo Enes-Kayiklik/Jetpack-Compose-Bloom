@@ -14,10 +14,11 @@ import com.eneskayiklik.bloom.ui.theme.Shapes
 fun BloomButton(
     text: String,
     modifier: Modifier = Modifier,
+    onClick: () -> Unit = { },
     backgroundColor: Color = MaterialTheme.colors.secondary
 ) {
     Button(
-        onClick = { /*TODO*/ },
+        onClick = onClick,
         modifier = modifier
             .fillMaxWidth()
             .height(48.dp),
@@ -30,10 +31,11 @@ fun BloomButton(
 
 @Composable
 fun BloomTextButton(
-    text: String
+    text: String,
+    onClick: () -> Unit = { }
 ) {
     TextButton(
-        onClick = { /*TODO*/ },
+        onClick = onClick,
         modifier = Modifier
             .fillMaxWidth()
             .height(48.dp)

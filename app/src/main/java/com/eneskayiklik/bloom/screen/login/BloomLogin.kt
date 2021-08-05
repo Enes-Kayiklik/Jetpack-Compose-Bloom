@@ -12,13 +12,17 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.eneskayiklik.bloom.R
 import com.eneskayiklik.bloom.component.BloomButton
 import com.eneskayiklik.bloom.component.BloomTextField
 import com.eneskayiklik.bloom.ui.theme.BloomTheme
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(
+    navController: NavController
+) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -40,7 +44,9 @@ fun LoginScreen() {
             Spacer(modifier = Modifier.height(16.dp))
             TermsText()
             Spacer(modifier = Modifier.height(16.dp))
-            BloomButton(text = stringResource(id = R.string.log_in))
+            BloomButton(text = stringResource(id = R.string.log_in), onClick = {
+                navController.navigate("home")
+            })
         }
     }
 }
@@ -66,6 +72,6 @@ private fun LoginTitle(modifier: Modifier = Modifier) {
 @Composable
 fun PrevLogin() {
     BloomTheme {
-        LoginScreen()
+        LoginScreen(rememberNavController())
     }
 }
