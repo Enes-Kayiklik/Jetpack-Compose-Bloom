@@ -25,8 +25,7 @@ class MainActivity : ComponentActivity() {
                     composable(
                         "welcome",
                         exitTransition = { _, _ ->
-                            slideOutHorizontally(
-                                targetOffsetX = { -300 },
+                            shrinkHorizontally(
                                 animationSpec = tween(
                                     durationMillis = 300,
                                     easing = FastOutSlowInEasing
@@ -34,8 +33,7 @@ class MainActivity : ComponentActivity() {
                             ) + fadeOut(animationSpec = tween(300))
                         },
                         popEnterTransition = { _, _ ->
-                            slideInHorizontally(
-                                initialOffsetX = { -300 },
+                            expandHorizontally(
                                 animationSpec = tween(
                                     durationMillis = 300,
                                     easing = FastOutSlowInEasing
@@ -47,38 +45,28 @@ class MainActivity : ComponentActivity() {
                     }
                     composable(
                         "login",
-                        enterTransition = { _, _ ->
-                            slideInHorizontally(
-                                initialOffsetX = { 300 },
-                                animationSpec = tween(
-                                    durationMillis = 300,
-                                    easing = FastOutSlowInEasing
-                                )
-                            ) + fadeIn(animationSpec = tween(300))
-                        },
                         popEnterTransition = { _, _ ->
-                            slideInHorizontally(
-                                initialOffsetX = { -300 },
+                            expandHorizontally(
                                 animationSpec = tween(
                                     durationMillis = 300,
                                     easing = FastOutSlowInEasing
                                 )
                             ) + fadeIn(animationSpec = tween(300))
                         },
+                        exitTransition = { _, _ ->
+                            shrinkHorizontally(
+                                animationSpec = tween(
+                                    durationMillis = 300,
+                                    easing = FastOutSlowInEasing
+                                )
+                            ) + fadeOut(animationSpec = tween(300))
+                        },
+                        popExitTransition = null
                     ) {
                         LoginScreen(navController)
                     }
                     composable(
                         "home",
-                        enterTransition = { _, _ ->
-                            slideInHorizontally(
-                                initialOffsetX = { 300 },
-                                animationSpec = tween(
-                                    durationMillis = 300,
-                                    easing = FastOutSlowInEasing
-                                )
-                            ) + fadeIn(animationSpec = tween(300))
-                        },
                     ) {
                         HomeScreen()
                     }
